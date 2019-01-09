@@ -1,5 +1,6 @@
 import React, { Component }from "react";
 import { Button, View, Text, StyleSheet } from "react-native";
+import { TextInput } from "react-native-gesture-handler";
 
 export default class LoginScreen extends Component {
     static navigationOptions = {
@@ -9,9 +10,12 @@ export default class LoginScreen extends Component {
     render() {
       return (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-          <Text>Home Screen</Text>
+          <View style={styles.loginInfo}>
+            <Text>用户名</Text>
+            <TextInput placeholder="请输入用户名"></TextInput>
+          </View>
           <Button
-          title="Go to Details"
+          title="登录"
           onPress={() => {this.props.navigation.navigate('Details', {
               // itemId: 86,
               otherParam: '详情页',
@@ -21,3 +25,13 @@ export default class LoginScreen extends Component {
       );
     }
   }
+
+  const styles = StyleSheet.create({
+      loginInfo: {
+        width: 200,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+      }
+
+  });
