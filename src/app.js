@@ -8,9 +8,11 @@
 
 import React, { Component }from "react";
 import { createStackNavigator, createAppContainer, createDrawerNavigator } from "react-navigation";
-import { Provider } from 'react-redux'
+// import { Provider } from 'react-redux'
+// import ConfigureStore from "./redux/store"
 
-import ConfigureStore from "./redux/store"
+
+import LoginScreen from './login'
 import DetailsScreen from './views/details/details'
 import HomeScreen from './views/home/home'
 
@@ -19,11 +21,12 @@ console.disableYellowBox = true;
 
 const AppNavigator = createStackNavigator(
   {
+    Login: LoginScreen,
     Home: HomeScreen,
     Details: DetailsScreen
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "Login",
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: '#f4511e',
@@ -42,15 +45,20 @@ const AppNavigator = createStackNavigator(
 
 const AppContainer = createAppContainer(AppNavigator);
 
-const store = ConfigureStore({});
+// const store = ConfigureStore({});
 
 export default class App extends Component {
   render() {
-    return (<Provider store={store}>
-        <AppContainer  onNavigationStateChange={(prevState, curState) => {
-          const curScreen = getCurrentRouteName(curState);
-          const prevScreen = getCurrentRouteName(prevState);
-        }} />
-    </Provider>);
+    // return (<Provider store={store}>
+    //     <AppContainer  onNavigationStateChange={(prevState, curState) => {
+    //       const curScreen = getCurrentRouteName(curState);
+    //       const prevScreen = getCurrentRouteName(prevState);
+    //       console.log("currentScreen", curScreen);
+    //       console.log("prevScreen", prevScreen);
+    //     }} />
+    // </Provider>);
+    return (
+      <AppContainer />
+    )
   }
 }
