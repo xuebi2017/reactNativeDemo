@@ -52,25 +52,27 @@ Routers.map((component) => {
 });
 console.log('pages',pages)
 
-const AppNavigator = createStackNavigator(
-  {
-    Login: LoginScreen,
-    Home: HomeScreen,
-    Details: DetailsScreen
-  },
-  // {
-  //   initialRouteName: "Login",
-  //   defaultNavigationOptions: {
-  //     headerStyle: {
-  //       backgroundColor: '#f4511e',
-  //     },
-  //     headerTintColor: '#fff',
-  //     headerTitleStyle: {
-  //     fontWeight: 'bold',
-  //     },
-  //   }
-  // }
-);
+const AppNavigator = createStackNavigator(pages);
+
+// const AppNavigator = createStackNavigator(
+//   {
+//     Login: LoginScreen,
+//     Home: HomeScreen,
+//     Details: DetailsScreen
+//   },
+//   {
+//     initialRouteName: "Login",
+//     defaultNavigationOptions: {
+//       headerStyle: {
+//         backgroundColor: '#f4511e',
+//       },
+//       headerTintColor: '#fff',
+//       headerTitleStyle: {
+//       fontWeight: 'bold',
+//       },
+//     }
+//   }
+// );
 
 //调试app时刷新应该停留在当前页，实际上不是的
 // const navigationPersistenceKey = __DEV__ ? "NavigationStateDEV" : null;

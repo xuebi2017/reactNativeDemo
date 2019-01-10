@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, FlatList, TouchableOpacity, Platform, Dimensions, NativeModules, NativeEventEmitter } from 'react-native'
 import { StackActions, NavigationActions } from 'react-navigation';
-import SplashScreen from 'react-native-splash-screen'
+// import SplashScreen from 'react-native-splash-screen'
 
 // import Http from "./utils/http";
 import Storage from "./utils/storage";
@@ -38,11 +38,12 @@ export default class Main extends React.Component {
 
     start = () => {
         //正式版(记住密码)
-        SplashScreen.hide();
-        Storage.Get("UserInfo").then((data) => {
-            if (data == null) {
-                this.props.navigation.dispatch(toLogin);
-            }
+        // SplashScreen.hide();
+        this.props.navigation.dispatch(toLogin);
+        // Storage.Get("UserInfo").then((data) => {
+        //     if (data == null) {
+        //         this.props.navigation.dispatch(toLogin);
+        //     }
             // else {
             //     var token = JSON.parse(data);
             //     var expiresTime = new Date(token['expires_time']);      //过期时间  TODO  当前时间>过期时间  时刷新token
@@ -54,7 +55,7 @@ export default class Main extends React.Component {
             //         this.props.navigation.dispatch(toHome);
             //     }
             // }
-        })
+        // })
     }
 
     render() {
