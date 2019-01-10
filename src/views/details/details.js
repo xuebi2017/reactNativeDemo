@@ -20,8 +20,8 @@ export default class DetailsScreen extends Component {
   }
     render() {
         const  { navigation }  = this.props;
-        console.log('this.props',this.props)
-        console.log('navigation', navigation)
+        // console.log('this.props',this.props)
+        // console.log('navigation', navigation)
         const  itemId = navigation.getParam('itemId', 'NO-ID');
         const otherParam = navigation.getParam('otherParam', 'some default value')
       return (
