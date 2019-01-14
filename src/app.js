@@ -11,9 +11,9 @@ import { createStackNavigator, createAppContainer, createDrawerNavigator } from 
 import { Provider } from 'react-redux'
 
 
-import LoginScreen from './views/login'
-import DetailsScreen from './views/details/details'
-import HomeScreen from './views/home'
+// import LoginScreen from './views/login'
+// import DetailsScreen from './views/details/details'
+// import HomeScreen from './views/home'
 
 import ConfigureStore from './redux/store'
 import { Routers } from './router/router';
