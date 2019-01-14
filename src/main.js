@@ -39,23 +39,24 @@ export default class Main extends React.Component {
     start = () => {
         //正式版(记住密码)
         // SplashScreen.hide();
-        this.props.navigation.dispatch(toLogin);
-        // Storage.Get("UserInfo").then((data) => {
-        //     if (data == null) {
-        //         this.props.navigation.dispatch(toLogin);
-        //     }
-            // else {
-            //     var token = JSON.parse(data);
-            //     var expiresTime = new Date(token['expires_time']);      //过期时间  TODO  当前时间>过期时间  时刷新token
-            //     if (new Date() > expiresTime) {
-            //         this.props.navigation.dispatch(toLogin);
-            //     }
-            //     else {
-            //         Http.AccessToken = token.access_token;
-            //         this.props.navigation.dispatch(toHome);
-            //     }
-            // }
-        // })
+        // this.props.navigation.dispatch(toLogin);
+        Storage.Get("UserInfo").then((data) => {
+            if (data == null) {
+                console.log(111)
+                this.props.navigation.dispatch(toLogin);
+            }
+            else {
+                var token = JSON.parse(data);
+                var expiresTime = new Date(token['expires_time']);      //过期时间  TODO  当前时间>过期时间  时刷新token
+                if (new Date() > expiresTime) {
+                    this.props.navigation.dispatch(toLogin);
+                }
+                else {
+                    Http.AccessToken = token.access_token;
+                    this.props.navigation.dispatch(toHome);
+                }
+            }
+        })
     }
 
     render() {

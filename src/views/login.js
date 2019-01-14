@@ -14,9 +14,13 @@ export default class LoginScreen extends Component {
             <Text>用户名</Text>
             <TextInput placeholder="请输入用户名"></TextInput>
           </View>
+          <View style={styles.loginInfo}>
+            <Text>密码</Text>
+            <TextInput placeholder="请输入密码"></TextInput>
+          </View>
           <Button
           title="登录"
-          onPress={() => {this.props.navigation.navigate('Details', {
+          onPress={() => {this.props.navigation.navigate('detail', {
               // itemId: 86,
               otherParam: '详情页',
           })}}
