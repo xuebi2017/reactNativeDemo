@@ -5,4 +5,4 @@ import App from './src/app';
 import {name as appName} from './src/app.json';
 
 //注册app
-AppRegistry.registerComponent(name, () => App);
+AppRegistry.registerComponent(appName, () => App);
