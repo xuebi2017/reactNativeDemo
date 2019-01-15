@@ -7,7 +7,7 @@
  */
 
 import React, { Component }from "react";
-import { createStackNavigator, createAppContainer, createDrawerNavigator } from "react-navigation";
+import { createStackNavigator, createAppContainer } from "react-navigation";
 import { Provider } from 'react-redux'
 
 import ConfigureStore from './redux/store'
