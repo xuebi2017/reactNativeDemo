@@ -38,6 +38,7 @@ export default class Main extends React.Component {
 
     start = () => {
         //正式版(记住密码)
+        // console.log('SplashScreen', SplashScreen)
         // SplashScreen.hide();
         // this.props.navigation.dispatch(toLogin);
         Storage.Get("UserInfo").then((data) => {
