@@ -1,9 +1,9 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, FlatList, TouchableOpacity, Platform, Dimensions, NativeModules, NativeEventEmitter } from 'react-native'
 import { StackActions, NavigationActions } from 'react-navigation';
-// import SplashScreen from 'react-native-splash-screen'
+import SplashScreen from 'react-native-splash-screen'
 
-// import Http from "./utils/http";
+import Http from "./utils/http";
 import Storage from "./utils/storage";
 
 const toLogin = StackActions.reset({
@@ -38,9 +38,7 @@ export default class Main extends React.Component {
 
     start = () => {
         //正式版(记住密码)
-        // console.log('SplashScreen', SplashScreen)
-        // SplashScreen.hide();
-        // this.props.navigation.dispatch(toLogin);
+        SplashScreen.hide();
         Storage.Get("UserInfo").then((data) => {
             if (data == null) {
                 console.log(111)
